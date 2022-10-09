@@ -63,4 +63,13 @@ const createDocumnet = async () => {
   }
 };
 
-createDocumnet();
+// createDocumnet();
+const getDocument = async () => {
+  const result = await Playlist.find({ name: "devil" })
+    //    1 for true 0 for false
+    //  it will only show name only
+    .select({ _id: 0 ,name: 1 });
+  console.log(result);
+};
+
+getDocument();
